@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<title>Rock Paper Scissors</title>
+<body>
+    <script>
+//Create a function called computerPlay
+//computerPlay should randomly return 1 2 or 3
+//create a function called playerSelection
+//have player choose rock paper or scissors
+//create a function to decide the winner
+//Create a for loop that plays the game 5 times
+//1 = rock, 2 = paper, 3 = scissors 
+let compChoice;
+function computerPlay(){
+    compChoice = Math.floor((Math.random() * 3) + 1);
+    return compChoice;
+    
+}
+
+function player(){
+playerChoice = prompt("Please enter rock, paper, or scissors");
+playerChoiceProcessed = playerChoice.toLowerCase();
+switch (playerChoiceProcessed){
+    case "rock":
+        console.log("You chose rock");
+        playerChoice = 1;
+        break;
+    case "paper":
+        console.log("You chose paper");
+        playerChoice = 2;
+        break;
+    case "scissors":
+        console.log("You chose scissors");
+        playerChoice = 3;
+        break;
+    default:
+        alert("Choice invalid");
+        break;
+    }
+}
+
+function gameTime(comp, person){
+    if (comp == person){
+        console.log("It's a draw");
+    } else if ((comp == 1 && person == 2) || (comp == 3 && player == 1) || (comp == 2 && player == 3)){
+        console.log("You win!");
+    } else {
+        console.log("Sorry, you lose. :(");
+    }
+
+}
+for (let i = 0; i <= 4; i++){
+    computerPlay();
+    player();
+    switch(compChoice){
+        case 1:
+        console.log("Computer chose rock");
+        break;
+        case 2:
+        console.log("Computer chose paper");
+        break;
+        case 3:
+        console.log("Computer chose scissors");
+        break;
+    }
+    gameTime(compChoice, playerChoice);
+}
+
+
+    </script>
+</body>
+</html>
